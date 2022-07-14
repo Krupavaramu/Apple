@@ -1,0 +1,4 @@
+<div class="produts" *ngFor="let item of product.items"> 
+    <input type="checkbox" [checked]="item.checked" (click)="selectProduct(item)"/>
+    <label>{{item.name}}</label>
+</div>

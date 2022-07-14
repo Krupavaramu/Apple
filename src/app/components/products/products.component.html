@@ -1,0 +1,23 @@
+<div class="products-section">
+    <h1>Select Products</h1>
+    <div *ngFor="let product of products">
+        <div class="product-line">
+            <span class="expand-collapse" [class.collapse]="product.expand" (click)="product.expand = !product.expand"></span>
+            <span *ngIf="!product.expand" class="right-arrow"></span>
+            <span *ngIf="product.expand" class="down-arrow"></span>
+            <h2>{{product.product}}</h2>
+        </div>
+        <app-product-list 
+            *ngIf="product.expand" 
+            [product]="product" 
+            [products]="products"
+            (isAddActive)="isAddActive($event)">
+        </app-product-list>
+    </div>
+    <div class="btn-section"> 
+        <button class="clear-btn" (click)="clearCart()">Clear</button>
+        <button class="add-btn" [class.active]="isActive" (click)="addToCart()">Add to Cart</button>
+    </div>
+
+    <p *ngIf="productNames?.length > 0" class="success-msg">Products added to cart are : <b> {{productNames}} </b></p>
+</div>

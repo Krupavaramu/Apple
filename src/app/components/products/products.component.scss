@@ -1,0 +1,88 @@
+$ash: #ccc;
+$white: #ffffff;
+
+.products-section{
+    width:70%;
+    margin: 0 auto;
+}
+
+.product-line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid $ash;
+
+    .expand-collapse {
+        display: inline-block;
+        width: 15px;
+        height:15px;
+        border: 1px solid $ash;
+        color: #000;
+        font-weight: bold;
+        padding:2px;
+        margin-right:20px;
+        text-align: center;
+        padding-bottom: 3px;
+        &::before {
+            content: '+';
+        }
+        &.collapse::before {
+            content: '‒';
+        }
+    }
+    
+    .arrow {
+        display: inline-block;
+        width: 15px;
+        margin-right: 20px;
+    }
+
+    h2 {
+        font-weight: normal;
+    }
+}
+
+.btn-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 2rem;
+    .clear-btn, .add-btn {
+        padding:12px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px solid $ash;
+        background-color: $white;
+    }
+    .add-btn {
+        background-color: $ash;
+    }
+    .add-btn.active {
+        background-color: #0d6efd;
+        color: $white;
+    }
+    .clear-btn {
+        padding: 12px 30px;
+    }
+}
+
+.success-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}
+
+.down-arrow, .right-arrow {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-size: 100% 100%;
+    margin-right: 15px;
+    background-image: url('../../../assets/images/down-arrow.png');
+}
+
+.right-arrow {
+    background-image: url('../../../assets/images/right-arrow.png');
+}
